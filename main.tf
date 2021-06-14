@@ -46,6 +46,10 @@ resource "aws_elasticache_replication_group" "redis" {
     },
     var.tags,
   )
+
+  lifecycle {
+    prevent_destroy = true
+  }
 }
 
 resource "random_id" "redis_pg" {
